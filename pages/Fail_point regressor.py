@@ -1,6 +1,9 @@
 import pickle
 import numpy as np
 import streamlit as st
+import os
+os.system('sudo pip install scikit-learn==0.20.4')
+
 
 option1=st.selectbox('Please enter the model you wish to use',('Device health classifier','Fail point regressor')
 )
@@ -29,5 +32,4 @@ with open('model_pickle_patientmonitor','rb')as f:
 if (st.button("Get device status now"))== True:
     pred1()
     st.write("the next failure is after",predic_final1)
-
 
